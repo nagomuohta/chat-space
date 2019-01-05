@@ -64,8 +64,9 @@ Things you may want to cover:
 |password_digest|string||
 
 ## Association
-- has_many :group_user
-- has_many :user, through: :group_user
+- has_many :messages
+- has_many :members
+- has_many :group_users, through: :members
 
 
 ## groupテーブル
@@ -76,5 +77,6 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ## Association
-- has_many :group_user
-- has_many :user, through: :group_user
+- has_many :messages
+- has_many :members
+- has_many :users, through: :menmbers
