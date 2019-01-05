@@ -63,6 +63,7 @@ Things you may want to cover:
 |email|string|null: false, foreign_key: true|
 |password_digest|string||
 
+
 ## Association
 - has_many :messages
 - has_many :members
