@@ -1,8 +1,9 @@
 .notice {
-  color: #fff;
+  color: $textwhite;
   background: $green;
   text-align: center;
-  height: 30px;
-  width: 100vh;
+  height: 20px;
+  width: 100%;
   clear: both;
+  font-size: 15px;
 }

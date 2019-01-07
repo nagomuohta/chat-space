@@ -15,23 +15,21 @@
           .chat-side__user-name
             NAGOMU
             %a.chat-side__user--new-group{:href => ""}
-              %i.fa.fa-pencil-square-o::before
+              %i.fa.fa-pencil-square-o
             %a.chat-side__user--edit-user{:href => ""}
-              %i.fa.fa-cog::before
-
-
-    .chat-side__groups
-      .chat-side__groups-list
-        %a.chat-side__group{:href => ""}
-          .chat-side__group-name
-            HELLO WORLD
-          .chat-side__group-message
-            GOOD BYE WORLD
-        %a.chat-side__group{:href => ""}
-          .chat-side__group-name
-            HELLO JAPAN
-          .chat-side__group-message
-            GOOD BYE JAPAN
+              %i.fa.fa-cog
+      .chat-side__groups
+        .chat-side__groups-list
+          .chat-side__group
+            .chat-side__group-name
+              HELLOWORLD
+            .chat-side__group-message
+              GOODBYEWORLD
+          .chat-side__group
+            .chat-side__group-name
+              HELLOJAPAN
+            .chat-side__group-message
+              GOODBYEJAPAN
 
 
     .chat-main
@@ -39,39 +37,36 @@
         .chat-main__header--group
           .chat-main__header--group-name
             HELLO WORLD
-        %a.chat-main__header--group-edit-btn{:href => ""} edit
-
-    .chat-main__header-members
-      MEMBER:
-      %i NAGOMU
-
-    .chat-main__body
-      .chat-main__body--messages-list
-        .chat-main__message
-          .chat-main__message-name
-            NAGOMU
-          .chat-main__message-time
-            0000/00/00 00:00:00
-          .chat-main__message-body
-            TEST
-        .chat-main__message
-          .chat-main__message-name
-            NAGOMU
-          .chat-main__message-time
-            TEST
-        .chat-main__message
-          .chat-main__message-name
-            NAGOMU
-          .chat-main__message-time
-            0000/00/00 00:00:00
-          .chat-main__message-body
-            TEST
-
-
-    .chat-main__footer
-      %form.chat-main__footer-form
-        .chat-main__footer-body
-          %label.chat-file
-            %input.description{:placeholder => "type a message", :type => "text"}
-              %i.fa.fa-image::before
-                %input.submit{:type => "submit", :name => "commit", :value => "send"}
+          %a.chat-main__header--group-edit-btn{:href => ""} edit
+        .chat-main__header-members
+          MEMBER:
+          %i NAGOMU
+      .chat-main__body
+        .chat-main__body--messages-list
+          .chat-main__message
+            .chat-main__message-name
+              NAGOMU
+            .chat-main__message-time
+              0000/00/00 00:00:00
+            .chat-main__message-body
+              TEST
+          .chat-main__message
+            .chat-main__message-name
+              NAGOMU
+            .chat-main__message-time
+              0000/00/00 00:00:00
+            .chat-main__message-body
+              TEST
+          .chat-main__message
+            .chat-main__message-name
+              NAGOMU
+            .chat-main__message-time
+              0000/00/00 00:00:00
+            .chat-main__message-body
+              TEST
+      .footer
+        %input.description{:placeholder => "type a message", :type => "text"}/
+        %label.chat-imgfile
+          %input.image{:type => "file"}/
+          %i.fa.fa-image
+        %input.submit{:type => "submit", :value => "Send"}/
