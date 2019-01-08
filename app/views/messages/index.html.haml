@@ -55,9 +55,11 @@
           0000/00/00 00:00:00
         .chat-main__message-body
           TEST
-  .footer
-    %input.description{:placeholder => "type a message", :type => "text"}/
-    %label.chat-imgfile
-      %input.image{:type => "file"}/
-      %i.fa.fa-image
-    %input.submit{:type => "submit", :value => "Send"}/
+  .chat-main__footer
+    %form.chat-main__footer-form
+      .chat-main__footer-body
+        %input.description{:placeholder => "type a message", :type => "text"}/
+        %label.chat-imgfile
+          %input.image{:type => "file"}/
+          %i.fa.fa-image
+      %input.submit{:type => "submit", :value => "Send"}/

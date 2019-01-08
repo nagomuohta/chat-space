@@ -60,43 +60,52 @@
       clear: both;
     }
   }
-  .footer {
+  &__footer{
     height: 90px;
-    width: $footerwidth;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0px;
-    left:300px;
-    background-color: $whitegray;
-    padding-left: 20px 40px;
-    @include clearfix;
-    .description {
-      width: calc(100% - 170px);
-      height: 50px;
+    width: 100%;
+    background-color: #B8C3C7;
+    &-form{
+      margin: 0 40px;
       position: relative;
-      display: inline-block;
-      margin:0 0 0 40px;
     }
-    .chat-imgfile{
-      color: $textwhite;
-      margin: 0 15px;
+    &-body{
       position: relative;
-      display: inline-block;
-    }
-    .image {
-      display: none;
-    }
-    .submit {
-      width: 100px;
-      height: 50px;
-      font-size: 16px;
-      color: $textwhite;
-      background-color: $green;
-      position: relative;
-      display: inline-block;
-      margin: 0 40px 0 0;
+       .description{
+        height: 50px;
+        width: calc( 100% - 130px );
+        padding: 15px 10px;
+        margin: 20px 0;
+        border: none;
+        box-sizing: border-box;
       }
+      .chat-imgfile{
+        height: 50px;
+        width: 40px;
+        margin: 32px 130px 20px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .image{
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: none;
+      }
+       .fa-image{
+      }
+    }
+    .submit{
+      color:#fff;
+      width:100px;
+      height:50px;
+      text-align: center;
+      background-color:#38AEF0;
+      margin: 20px 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+    }
   }
 }
