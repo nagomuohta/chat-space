@@ -1,1 +1,102 @@
-
+.chat-main{
+  height: 100vh;
+  width: $mainwidth;
+  float: left;
+  &__header{
+    height: 15%;
+    border: 1px solid #eee;
+    &--group{
+      margin : 0 40px;
+      height: 80px;
+      @include clearfix;
+      &-name{
+        color: #333;
+        font-size: 20px;
+        margin: 35px 0 15px;
+        float: left;
+      }
+      &-edit-btn{
+        font-size: 15px;
+        padding: 12.5px 20px;
+        margin: 28px 0 auto;
+        border: 1px solid $green;
+        float: right;
+        color: $green;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    &-members{
+      color: #999;
+      font-size: 12px;
+      margin: 0 40px;
+    }
+  }
+  &__body{
+    height: calc( 100vh - 15% - 90px );
+    overflow-y: scroll;
+    &--messages-list{
+      padding-top: 26px;
+      padding-left: 40px;
+    }
+  }
+  &__message{
+    padding: 20px 0;
+    @include clearfix;
+    &-name{
+      color: $submitgray;
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &-time{
+      color: #999;
+      font-size: 12px;
+      padding: 0 10px 10px;
+      float: left;
+    }
+    &-body{
+      color: $submitgray;
+      clear: both;
+    }
+  }
+  .footer {
+    height: 90px;
+    width: $footerwidth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    left:300px;
+    background-color: $whitegray;
+    padding-left: 20px 40px;
+    @include clearfix;
+    .description {
+      width: calc(100% - 170px);
+      height: 50px;
+      position: relative;
+      display: inline-block;
+      margin:0 0 0 40px;
+    }
+    .chat-imgfile{
+      color: $textwhite;
+      margin: 0 15px;
+      position: relative;
+      display: inline-block;
+    }
+    .image {
+      display: none;
+    }
+    .submit {
+      width: 100px;
+      height: 50px;
+      font-size: 16px;
+      color: $textwhite;
+      background-color: $green;
+      position: relative;
+      display: inline-block;
+      margin: 0 40px 0 0;
+      }
+  }
+}
