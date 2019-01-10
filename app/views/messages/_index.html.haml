@@ -14,15 +14,19 @@
   .chat-side__groups
     .chat-side__groups-list
       .chat-side__group
-        .chat-side__group-name
-          HELLOWORLD
-        .chat-side__group-message
-          GOODBYEWORLD
+        -current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .chat-side__group-name
+              = group.name
+            .chat-side__group-message
+              メッセージはまだありません
       .chat-side__group
-        .chat-side__group-name
-          HELLOJAPAN
-        .chat-side__group-message
-          GOODBYEJAPAN
+        -current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .chat-side__group-name
+              = group.name
+            .chat-side__group-message
+              メッセージはまだありません
 
 
 .chat-main
