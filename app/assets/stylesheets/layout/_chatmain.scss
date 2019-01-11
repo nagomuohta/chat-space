@@ -1,4 +1,3 @@
-
 .chat-main{
   height: 100vh;
   width: $mainwidth;
@@ -57,9 +56,9 @@
       float: left;
     }
     &-body{
-      color: $submitgray;
-      clear: both;
-    }
+        color: $submitgray;
+        clear: both;
+  }
   }
   &__footer{
     height: 90px;
@@ -79,23 +78,24 @@
         border: none;
         box-sizing: border-box;
       }
+      }
+    &-body{
       .chat-imgfile{
-        height: 50px;
-        width: 40px;
-        margin: 32px 130px 20px 0;
+
+
         position: absolute;
-        top: 0;
-        right: 0;
+        bottom: 30px;
+        right: 150px;
       }
       .image{
+
+      }
+       .fa-image{
         position: absolute;
         top: 15px;
         left: 15px;
         display: none;
       }
-       .fa-image{
-      }
-    }
     .submit{
       color:#fff;
       width:100px;
@@ -107,6 +107,7 @@
       top: 0;
       right: 0;
       border: none;
+    }
     }
   }
 }
