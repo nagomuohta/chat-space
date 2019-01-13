@@ -37,7 +37,7 @@
   .chat-main__footer
     .chat-main__footer-form
       .chat-main__footer-body
-        = form_for [@group, @message] do |f|
+        = form_for [@group, @message], html: { id: 'submitbutton' } do |f|
           = f.text_field :content, class: 'description', placeholder: 'type a message'
           .chat-main__footer-body
             = f.label :image, class: 'chat-imgfile' do
