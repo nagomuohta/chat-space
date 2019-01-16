@@ -32,7 +32,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-main__body--messages-list').append(html);
-      $("#submitbutton")[0].reset();
+      $("#submitbutton").get(0).reset();
       $('.submit').attr('disabled', false);
       $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
     })
