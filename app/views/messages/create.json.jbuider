@@ -1,3 +1,0 @@
-json.text @message.text
-json.group.message @group.message
-json.group @group
