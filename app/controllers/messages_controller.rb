@@ -22,8 +22,7 @@ class MessagesController < ApplicationController
   end
 
   private
-# メッセージの中のハッシュのなかにハッシュがあって、requireはその中のハッシュを出してる
-# permitで許可をする、mergeでuser_idとくっつける。
+
   def message_params
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end

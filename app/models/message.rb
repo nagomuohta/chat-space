@@ -8,4 +8,4 @@ class Message < ApplicationRecord
 end
 
 
-# presence 存在するかどうか
+
