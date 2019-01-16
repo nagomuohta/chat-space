@@ -4,23 +4,22 @@
   .chat-side__user
     .chat-side__user-content
       .chat-side__user-name
-        NAGOMU
-        %a.chat-side__user--new-group{:href => ""}
-          %i.fa.fa-pencil-square-o
-        %a.chat-side__user--edit-user{:href => ""}
-          %i.fa.fa-cog
+        = current_user.name
+        %a.chat-side__user--new-group
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
+        %a.chat-side__user--edit-user
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
   .chat-side__groups
     .chat-side__groups-list
       .chat-side__group
-        .chat-side__group-name
-          HELLOWORLD
-        .chat-side__group-message
-          GOODBYEWORLD
-      .chat-side__group
-        .chat-side__group-name
-          HELLOJAPAN
-        .chat-side__group-message
-          GOODBYEJAPAN
+        -current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .chat-side__group-name
+              = group.name
+            .chat-side__group-message
+              = group.show_last_message
 
 
 .chat-main
@@ -34,32 +33,16 @@
       %i NAGOMU
   .chat-main__body
     .chat-main__body--messages-list
-      .chat-main__message
-        .chat-main__message-name
-          NAGOMU
-        .chat-main__message-time
-          0000/00/00 00:00:00
-        .chat-main__message-body
-          TEST
-      .chat-main__message
-        .chat-main__message-name
-          NAGOMU
-        .chat-main__message-time
-          0000/00/00 00:00:00
-        .chat-main__message-body
-          TEST
-      .chat-main__message
-        .chat-main__message-name
-          NAGOMU
-        .chat-main__message-time
-          0000/00/00 00:00:00
-        .chat-main__message-body
-          TEST
+      = render @messages
   .chat-main__footer
-    %form.chat-main__footer-form
+    .chat-main__footer-form
       .chat-main__footer-body
-        %input.description{:placeholder => "type a message", :type => "text"}/
-        %label.chat-imgfile
-          %input.image{:type => "file"}/
-          %i.fa.fa-image
-      %input.submit{:type => "submit", :value => "Send"}/
+        = form_for [@group, @message], html: { id: 'submitbutton' } do |f|
+          = f.text_field :content, class: 'description', placeholder: 'type a message'
+          .chat-main__footer-body
+            = f.label :image, class: 'chat-imgfile' do
+              = fa_icon 'picture-o', class: 'image'
+              = f.file_field :image, class: 'fa-image'
+          = f.submit 'Send', class: 'submit'
+
+
