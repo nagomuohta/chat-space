@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     var image = message.image_url ? `<img src="${message.image_url}">` : '';
 
-    var html = `<div class ="chat-main__message" >
+    var html = `<div class ="chat-main__message" data-id="${message.id}">
                   <div class="chat-main__message-name" >
                        ${message.name}
                   </div>
@@ -22,7 +22,8 @@ $(function(){
     var formData = new FormData(this);
     var href = location.href
     $.ajax({
-      url: href,
+      url
+      : href,
       type: 'POST',
       data: formData,
       dataType: 'json',
@@ -30,12 +31,17 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      if (data.length != 0){
       var html = buildHTML(data);
       $('.chat-main__body--messages-list').append(html);
       $("#submitbutton")[0].reset();
-      $('.submit').attr('disabled', false);
       $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
-    })
+    }
+      else {
+        alert('error')
+    }
+      $('.submit').attr('disabled', false);
+      })
     .fail(function() {
       alert('error');
     })
@@ -45,28 +51,28 @@ $(function(){
       setInterval(update, 5000);
     });
     function update(){
-      if($('.chat-main__body')[0]){
         var message_id = $('.chat-main__message').last().data('id');
-      } else{
-        var message_id = 0
-      }
       $.ajax({
         url: location.href,
         type: 'GET',
         data: {id: message_id},
         dataType: 'json'
       })
-      .always(function(data){
-        console.log(i, data)
-          $.each(data, function(i, data){
-          var html = buildHTML(data);
+      .done(function(data){
+        if (data.length != 0){
+          data.forEach(function(message){
+          var html = buildHTML(message);
           $('.chat-main__body--messages-list').append(html);
           $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
-        })
-    //     return false
-      });
+          })
+        }
+      })
+      .fail(function() {
+        alert('error');
+      })
     }
 });
+
 
   // config.assets.js_compressor = :uglifier
 
