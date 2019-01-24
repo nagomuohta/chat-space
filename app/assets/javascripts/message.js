@@ -7,7 +7,7 @@ $(function(){
                        ${message.name}
                   </div>
                   <div class="chat-main__message-time" >
-                       ${message.strftime}
+                       ${message.date}
                   </div>
                   <div class="chat-main__message-body" >
                     ${message.content}
@@ -22,8 +22,7 @@ $(function(){
     var formData = new FormData(this);
     var href = location.href
     $.ajax({
-      url
-      : href,
+      url: href,
       type: 'POST',
       data: formData,
       dataType: 'json',
@@ -32,27 +31,24 @@ $(function(){
     })
     .done(function(data){
       if (data.length != 0){
-      var html = buildHTML(data);
-      $('.chat-main__body--messages-list').append(html);
-      $("#submitbutton")[0].reset();
-      $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
-    }
+        var html = buildHTML(data);
+        $('.chat-main__body--messages-list').append(html);
+        $("#submitbutton")[0].reset();
+        $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
+      }
       else {
         alert('error')
-    }
-      $('.submit').attr('disabled', false);
+      }
+        $('.submit').attr('disabled', false);
       })
-    .fail(function() {
-      alert('error');
+      .fail(function() {
+        alert('error');
+      })
     })
-  })
-  // 自動更新
-  $(function(){
-      setInterval(update, 5000);
-    });
-    function update(){
+    setInterval(update, 5000);
+      function update(){
         var message_id = $('.chat-main__message').last().data('id');
-      $.ajax({
+        $.ajax({
         url: location.href,
         type: 'GET',
         data: {id: message_id},
@@ -72,9 +68,3 @@ $(function(){
       })
     }
 });
-
-
-  // config.assets.js_compressor = :uglifier
-
-
-
