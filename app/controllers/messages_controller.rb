@@ -4,7 +4,10 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-        # @groupに入ったものを受け取ってメッセージのインスタンスに入る
+      respond_to do |format|
+        format.html
+        format.json { @new_message = @messages.where('id > ?', params[:id])}
+      end
   end
 
   def create
