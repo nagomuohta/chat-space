@@ -63,3 +63,7 @@ gem "font-awesome-rails"
 gem 'haml-rails'
 
 gem 'devise'
+
+group :production do
+  gem 'unicorn'
+end

@@ -47,6 +47,7 @@ $(function(){
     })
     setInterval(update, 5000);
       function update(){
+        if (location.pathname.match(/\/groups\/\d+\/messages/)) {
         var message_id = $('.chat-main__message').last().data('id');
         $.ajax({
         url: location.href,
@@ -67,4 +68,5 @@ $(function(){
         alert('error');
       })
     }
+  }
 });
