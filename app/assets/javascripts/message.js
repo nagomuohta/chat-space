@@ -37,12 +37,12 @@ $(function(){
         $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
       }
       else {
-        alert('error')
+        alert('dataが空です')
       }
         $('.submit').attr('disabled', false);
       })
       .fail(function() {
-        alert('error');
+        alert('非同期通信に失敗しました');
       })
     })
     setInterval(update, 5000);
