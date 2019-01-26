@@ -41,6 +41,11 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -62,17 +67,10 @@ gem 'carrierwave'
 gem 'fog-aws'
 
 gem "font-awesome-rails"
+gem 'haml-rails'
 
 gem 'devise'
 
 group :production do
   gem 'unicorn'
-end
-
-group :development, :test do
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
 end
