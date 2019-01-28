@@ -28,7 +28,8 @@
         .chat-main__header--group-edit-btn Edit
     .chat-main__header-members
       MEMBER:
-      = current_user.name
+      - @group.users.each do |group|
+        = group.name
   .chat-main__body
     .chat-main__body--messages-list
       = render @messages
